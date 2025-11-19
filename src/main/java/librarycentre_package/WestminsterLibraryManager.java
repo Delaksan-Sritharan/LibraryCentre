@@ -171,5 +171,10 @@ public class WestminsterLibraryManager implements LibraryManager {
         ItemTableGUI table = new ItemTableGUI(itemList);
         table.setVisible(true);
     }
-    
+
+    @Override
+    public void editTableItem() {
+
+    }
+
 }
