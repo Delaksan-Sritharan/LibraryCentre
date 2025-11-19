@@ -174,6 +174,29 @@ public class WestminsterLibraryManager implements LibraryManager {
 
     @Override
     public void editTableItem() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the ISBN of the item to be edited: ");
+        String ISBN = input.next();
+        boolean found = false;
+        for (Item item: itemList){
+            if (item.getISBN().equals(ISBN)){
+                found = true;
+                System.out.println("\nTitle: "+ item.getISBN() +
+                        "\nPublication year: " + item.getPublicationYear());
+                if (item instanceof Book){
+                    System.out.println("\nItem type : Book");
+                } else if (item instanceof DVD) {
+                    System.out.println("\nItem type : DVD");
+                }else {
+                    System.out.println("\nItem type : Magazine");
+                }
+            }
+            break;
+        }
+        if (!found){
+            System.out.println("Item not found");
+        }
+
 
     }
 
