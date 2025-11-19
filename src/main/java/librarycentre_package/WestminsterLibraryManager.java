@@ -190,6 +190,9 @@ public class WestminsterLibraryManager implements LibraryManager {
                 }else {
                     System.out.println("\nItem type : Magazine");
                 }
+                System.out.println("Enter the new title : ");
+                String title = input.next();
+                item.setTitle(title);
             }
             break;
         }
