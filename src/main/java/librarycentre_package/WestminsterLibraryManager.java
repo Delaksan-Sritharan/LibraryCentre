@@ -36,6 +36,8 @@ public class WestminsterLibraryManager implements LibraryManager {
         System.out.println("To Display the list of item press 2");
         
         System.out.println("To Open GUI, press 3");
+
+        System.out.println("To edit an item, press 4");
         
         
 
@@ -66,6 +68,11 @@ public class WestminsterLibraryManager implements LibraryManager {
             case 3:
                 this.runGUI();
                 break;
+
+            case 4:
+                this.editTableItem();
+                break;
+
            
         }
         
