@@ -4,7 +4,7 @@
  */
 package librarycentre_package;
 
-public abstract class Item {
+public abstract class Item implements Comparable<Item> {
     
     //attributes - instance variables
     private String title;
@@ -47,5 +47,11 @@ public abstract class Item {
     public String toString(){
         return "Title: " + title + ", ISBN = " + ISBN + ", publication year: " + publicationYear; 
     }
-    
+
+    @Override
+    public int compareTo(Item o){
+        return Integer.compare(this.getPublicationYear(),o.getPublicationYear());
+    }
+
+    public abstract int compareTo(Magazine o);
 }

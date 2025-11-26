@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -154,15 +155,20 @@ public class WestminsterLibraryManager implements LibraryManager {
 
     @Override
     public void displayItems() {
-        
-        
         if (!itemList.isEmpty()){
             for(Item item : itemList) {
-                // print the type of item and the the description
-                if(item instanceof Book)
+                Collections.sort(itemList);
+                if(item instanceof Book){
                     System.out.print("BOOK - ");
-                else if (item instanceof DVD)
+                }
+                else if (item instanceof DVD){
                     System.out.print("DVD - ");
+                }else if (item instanceof Magazine){
+                    System.out.print("MAGAZINE - ");
+                }
+
+
+
                 //add here teh code if you added teh class Megazine
                 
                 System.out.println(item.toString());

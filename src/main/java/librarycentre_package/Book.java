@@ -33,6 +33,11 @@ public class Book extends Item {
     public String toString(){
         return super.toString() + ", author: " + author ; 
     }
-    
-    
+
+    @Override
+    public int compareTo(Magazine o) {
+         return this.getTitle().compareTo(o.getTitle());
+    }
+
+
 }

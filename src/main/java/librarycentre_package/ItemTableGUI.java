@@ -46,6 +46,28 @@ public class ItemTableGUI extends JFrame {
 
         // add a button on the bottom
         JButton button = new JButton("Info");
+        //Add an event handler to the "Info" button in the ItemTableGUI.java class (8 marks).
+        //When clicking the button, the user should see the total number of books, the total number of
+        //DVD and the total number of magazines
+        button.addActionListener(e -> {
+            int bookCount = 0;
+            int dvdCount = 0;
+            int magazineCount = 0;
+            for (Item item : itemList) {
+                if (item instanceof Book) {
+                    bookCount++;
+                } else if (item instanceof DVD) {
+                    dvdCount++;
+                } else if (item instanceof Magazine) {
+                    magazineCount++;
+                }
+            }
+            String message = "Total Books: " + bookCount + "\n" +
+                             "Total DVDs: " + dvdCount + "\n" +
+                             "Total Magazines: " + magazineCount;
+            javax.swing.JOptionPane.showMessageDialog(this, message, "Item Counts", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        });
+
         
         // add the panel to the frame
         add(scrollPane,BorderLayout.CENTER); 

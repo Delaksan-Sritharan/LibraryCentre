@@ -2,7 +2,7 @@ package librarycentre_package;
 
 import java.util.Objects;
 
-public class Magazine extends Item implements Comparable<Magazine> {
+public class Magazine extends Item {
     private int issueNumber;
     private PublicationFrequency publicationFrequency;
     private String editor;

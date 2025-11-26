@@ -42,5 +42,10 @@ public class DVD extends Item{
     public String toString(){
         return super.toString() + ", genre: " + genre + ", director: " + director;
     }
-    
+
+    @Override
+    public int compareTo(Magazine o) {
+        return this.getTitle().compareTo(o.getTitle());
+    }
+
 }
