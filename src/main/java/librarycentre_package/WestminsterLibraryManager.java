@@ -4,6 +4,7 @@
  */
 package librarycentre_package;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -155,6 +156,32 @@ public class WestminsterLibraryManager implements LibraryManager {
 
     @Override
     public void displayItems() {
+
+        Collections.sort(itemList);
+        try {
+            FileOutputStream fos = new FileOutputStream("hello.txt");
+            try {
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(itemList);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream("hello.txt");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Item> list =  (ArrayList<Item>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+
         if (!itemList.isEmpty()){
             for(Item item : itemList) {
                 Collections.sort(itemList);

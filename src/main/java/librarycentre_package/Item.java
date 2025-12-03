@@ -4,7 +4,9 @@
  */
 package librarycentre_package;
 
-public abstract class Item implements Comparable<Item> {
+import java.io.Serializable;
+
+public abstract class Item implements Comparable<Item>, Serializable {
     
     //attributes - instance variables
     private String title;

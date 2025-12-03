@@ -73,7 +73,6 @@ public class ItemTableGUI extends JFrame {
         add(scrollPane,BorderLayout.CENTER); 
         add(button, BorderLayout.SOUTH);
     }
-  
-        
+
     
 }
